@@ -53,3 +53,10 @@ Run deploy (copy directory `dist` to AWS S3 Bucket and Cloudfront) - temporary d
 ### `destroy`
 
 Run destroy (remove stack with AWS S3 Bucket and Cloudfront) - temporary does not work, please use `(cd infrastructure; npm run destroy)`
+
+## Tasks
+
+### Task 02
+
+S3 backed link http://aws-demo-food-market-s3bucket.s3-website.eu-north-1.amazonaws.com (protected, 403)
+CloudFront link https://d3eddq2lndvxd8.cloudfront.net
