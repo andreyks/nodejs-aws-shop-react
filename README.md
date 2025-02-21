@@ -17,11 +17,26 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 
 ## Installation
 ```shell
-// Install old node for this project
+// Setup repo and correct branch for the task.
+git clone git@github.com:andreyks/nodejs-aws-shop-react.git
+cd nodejs-aws-shop-react
+git co task_XX_name
+
+// Install old node for this project.
 nvm install 20
 
-// Install libraries
+// Install dependencies.
 npm i
+
+// Install aws (aws-cli) https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html.
+// Configure aws-cli with proper credentials.
+aws configure
+
+// Setup aws cdk.
+copy .env.example as .env
+# edit .env with correct credentials
+cd infrastructure;
+cdk bootstrap
 ```
 
 ## Available Scripts
@@ -48,11 +63,12 @@ Runs linting and formatting for all files in `src` folder.
 
 ### `deploy`
 
-Run deploy (copy directory `dist` to AWS S3 Bucket and Cloudfront) - temporary does not work, please use `(cd infrastructure; npm run deploy)`.
+Run deploy (copy directory `dist` to AWS S3 Bucket and Cloudfront). Alternative way is `(cd infrastructure; npm run deploy)`.
+After first run this command can be used for syncing directory `dist` to the AWS. Cloudfront invalidation will be executed as well.
 
 ### `destroy`
 
-Run destroy (remove stack with AWS S3 Bucket and Cloudfront) - temporary does not work, please use `(cd infrastructure; npm run destroy)`
+Run destroy (remove stack with AWS S3 Bucket and Cloudfront). Alternative command is `(cd infrastructure; npm run destroy)`.
 
 ## Tasks
 
