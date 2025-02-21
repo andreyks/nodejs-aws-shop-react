@@ -15,6 +15,15 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
+## Installation
+```shell
+// Install old node for this project
+nvm install 20
+
+// Install libraries
+npm i
+```
+
 ## Available Scripts
 
 ### `start`
@@ -36,3 +45,18 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `deploy`
+
+Run deploy (copy directory `dist` to AWS S3 Bucket and Cloudfront) - temporary does not work, please use `(cd infrastructure; npm run deploy)`.
+
+### `destroy`
+
+Run destroy (remove stack with AWS S3 Bucket and Cloudfront) - temporary does not work, please use `(cd infrastructure; npm run destroy)`
+
+## Tasks
+
+### Task 02
+
+S3 backed link http://aws-demo-food-market-s3bucket.s3-website.eu-north-1.amazonaws.com (protected, 403)
+CloudFront link https://d3eddq2lndvxd8.cloudfront.net
