@@ -7,7 +7,8 @@
       "watch": "tsc -w",
       "cdk": "cdk",
       "deploy": "npm run build && cdk deploy --require-approval never",
-      "destroy": "cdk destroy"
+      "destroy": "cdk destroy",
+      "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E3RLE2UDRKNVMY --paths \"/*\""
     },
     "author": {
       "name": "Amazon Web Services",
