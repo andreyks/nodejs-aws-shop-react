@@ -9,11 +9,7 @@ export function useAvailableProducts() {
     "available-products",
     async () => {
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.product}/products`, {
-          headers: {
-            Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-          },
-        }
+        `${API_PATHS.product}/products`
       );
       return res.data;
     }
