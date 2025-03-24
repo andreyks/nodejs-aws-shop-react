@@ -34,16 +34,20 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
         throw new Error("No file selected");
       }
       // Get the presigned URL
-      const response = await axios({
+      const requestParams = {
         method: "GET",
         url,
         params: {
           name: encodeURIComponent(file.name),
         },
-        headers: {
-          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-        },
-      });
+        headers: {}
+      }
+      if(localStorage.getItem("authorization_token")){
+        requestParams.headers = {
+            Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        };
+      };
+      const response = await axios(requestParams);
       console.log("File to upload: ", file.name);
       console.log("Uploading to: ", response.data);
       const result = await fetch(response.data, {
