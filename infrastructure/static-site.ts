@@ -74,7 +74,7 @@ export class StaticSite extends Construct {
       })
   
       new CfnOutput(this, 'Distribution Id', { value: distribution.distributionId });
-      new CfnOutput(this, 'Distribution Url', { value: distribution.domainName });
+      new CfnOutput(this, 'Distribution Domain', { value: distribution.domainName, exportName: 'DistributionDomain' });
   
       // Deploy site contents to S3 bucket
       new s3deploy.BucketDeployment(this, 'DeployWithInvalidation', {
